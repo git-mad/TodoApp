@@ -9,10 +9,24 @@
     tools:showIn="@layout/activity_main">
 
     <TextView
+        android:id="@+id/task_label"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="Hello World"
-        android:id="@+id/Hello_WorldTV"
-        />
+        android:layout_margin="15dp"
+        android:text="@string/assignment_name_label"
+        android:textColor="@android:color/black"
+        android:textSize="20dp"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="13dp" />
+
+    <TextView
+        android:id="@+id/task_name"
+        android:layout_width="115dp"
+        android:layout_height="0dp"
+        android:text="empty"
+        android:textSize="20dp"
+        app:layout_constraintLeft_toRightOf="@id/task_label"
+        app:layout_constraintRight_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/task_label" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

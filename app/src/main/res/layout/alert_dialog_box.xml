@@ -22,30 +22,6 @@
         android:layout_margin="5dp"
         />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:layout_marginRight="15dp"
-        android:text="Create"
-        android:layout_alignParentRight="true"
-        android:textSize="18dp"
-        android:id="@+id/create_button"
-        android:layout_below="@id/taskNameEditText"
-        android:textColor="@android:color/black"
-        />
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:layout_marginLeft="15dp"
-        android:text="Cancel"
-        android:layout_alignParentLeft="true"
-        android:textSize="18dp"
-        android:id="@+id/cancel_button"
-        android:layout_below="@id/taskNameEditText"
-        android:textColor="@android:color/black"
-        />
 
 
 </RelativeLayout>

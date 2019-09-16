@@ -9,31 +9,19 @@ import androidx.appcompat.widget.Toolbar;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
-public class MainActivity extends AppCompatActivity implements CustomDialog.OnInputListener {
-    private TextView mainScreenTaskName;
+public class MainActivity extends AppCompatActivity {
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        mainScreenTaskName = findViewById(R.id.task_name);
-        FloatingActionButton fab = findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                addItem();
-            }
-        });
-    }
+        //Section 1 setting up the main screen:
 
-    private void addItem() {
-        CustomDialog dialog = new CustomDialog();
-        dialog.show(getSupportFragmentManager(), "CustomDialog");
     }
+    //Section 2 adding the item:
 
-    @Override
-    public void sendInput(String input) {
-        mainScreenTaskName.setText(input);
-    }
+    //Section 3 receiving the data
+
 }

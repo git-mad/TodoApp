@@ -28,7 +28,7 @@ import static androidx.recyclerview.widget.RecyclerView.HORIZONTAL;
 public class MainActivity extends AppCompatActivity implements CustomDialog.OnInputListener {
     private RecyclerView mainScreenTaskNameList;
     private ArrayList<String> taskNames = new ArrayList<>();
-    private RecyclerView.LayoutManager layoutManager;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -47,9 +47,8 @@ public class MainActivity extends AppCompatActivity implements CustomDialog.OnIn
     }
 
     private void setupList() {
-        layoutManager = new LinearLayoutManager(this);
-        mainScreenTaskNameList.setHasFixedSize(true);
-        mainScreenTaskNameList.setLayoutManager(layoutManager);
+        mainScreenTaskNameList.setLayoutManager(new LinearLayoutManager(this));
+
         DividerItemDecoration itemDecor = new DividerItemDecoration(this, HORIZONTAL);
         mainScreenTaskNameList.addItemDecoration(itemDecor);
         FileInputStream fis1 = null;
@@ -62,10 +61,11 @@ public class MainActivity extends AppCompatActivity implements CustomDialog.OnIn
             while ((line = bufferedReader.readLine()) != null) {
                 sb.append(line);
             }
-            if(sb.toString() != "") {
+            if (sb.toString() != "") {
                 String json = sb.toString();
                 Gson gson = new Gson();
-                taskNames = gson.fromJson(json, new TypeToken<List<String>>(){}.getType());
+                taskNames = gson.fromJson(json, new TypeToken<List<String>>() {
+                }.getType());
             }
         } catch (Exception e) {
             e.printStackTrace();
@@ -76,9 +76,8 @@ public class MainActivity extends AppCompatActivity implements CustomDialog.OnIn
 
     private void addItem() {
         CustomDialog dialog = new CustomDialog();
-        dialog.show(getSupportFragmentManager(),"CustomDialog");
+        dialog.show(getSupportFragmentManager(), "CustomDialog");
     }
-
 
 
     @Override

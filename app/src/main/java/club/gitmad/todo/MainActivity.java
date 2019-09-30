@@ -47,30 +47,12 @@ public class MainActivity extends AppCompatActivity implements CustomDialog.OnIn
     }
 
     private void setupList() {
-        layoutManager = new LinearLayoutManager(this);
-        mainScreenTaskNameList.setHasFixedSize(true);
-        mainScreenTaskNameList.setLayoutManager(layoutManager);
-        DividerItemDecoration itemDecor = new DividerItemDecoration(this, HORIZONTAL);
-        mainScreenTaskNameList.addItemDecoration(itemDecor);
-        FileInputStream fis1 = null;
-        try {
-            fis1 = this.openFileInput("myTasks.txt");
-            InputStreamReader isr = new InputStreamReader(fis1);
-            BufferedReader bufferedReader = new BufferedReader(isr);
-            StringBuilder sb = new StringBuilder();
-            String line;
-            while ((line = bufferedReader.readLine()) != null) {
-                sb.append(line);
-            }
-            if(sb.toString() != "") {
-                String json = sb.toString();
-                Gson gson = new Gson();
-                taskNames = gson.fromJson(json, new TypeToken<List<String>>(){}.getType());
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        mainScreenTaskNameList.setAdapter(new mListAdapter(taskNames, this));
+        /**
+         * 1. need to attach a layout manager to our RecyclerView
+         * 2. add dividing lines
+         * 3. get data for arraylist from file
+         * 4. set adapter for arraylist to RecyclerView
+         */
 
     }
 

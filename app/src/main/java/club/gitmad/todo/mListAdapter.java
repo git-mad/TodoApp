@@ -27,14 +27,13 @@ public class mListAdapter extends RecyclerView.Adapter<mListAdapter.ViewHolder> 
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
-        View view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.task_list_item, viewGroup, false);
-        ViewHolder holder = new ViewHolder(view);
-        return holder;
+        //must inflate layout for each item to create our view holder
+
     }
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder viewHolder, int i) {
-        viewHolder.taskName.setText(mTaskNames.get(i));
+        //add our elements to viewholder
     }
 
     @Override

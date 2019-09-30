@@ -70,7 +70,7 @@ public class MainActivity extends AppCompatActivity implements CustomDialog.OnIn
         } catch (Exception e) {
             e.printStackTrace();
         }
-        mainScreenTaskNameList.setAdapter(new mListAdapter(taskNames, this));
+        mainScreenTaskNameList.setAdapter(new TaskAdapter(taskNames));
 
     }
 

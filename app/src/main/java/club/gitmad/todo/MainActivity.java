@@ -2,6 +2,7 @@ package club.gitmad.todo;
 
 import android.os.Bundle;
 import android.view.View;
+import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -29,10 +30,12 @@ public class MainActivity extends AppCompatActivity implements CustomDialog.OnIn
         setSupportActionBar(toolbar);
 
         mainScreenTaskNameList = findViewById(R.id.task_name_list);
-        mainScreenTaskNameList.setLayoutManager(new LinearLayoutManager(this));
-        DividerItemDecoration itemDecor = new DividerItemDecoration(this, HORIZONTAL);
-        mainScreenTaskNameList.addItemDecoration(itemDecor);
-        mainScreenTaskNameList.setAdapter(new TaskAdapter(taskNames));
+
+//        LinearLayoutManager manager = new LinearLayoutManager(this);
+//        mainScreenTaskNameList.setLayoutManager(manager);
+//
+//        TaskAdapter adapter = new TaskAdapter(taskNames);
+//        mainScreenTaskNameList.setAdapter(adapter);
 
         FloatingActionButton fab = findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {

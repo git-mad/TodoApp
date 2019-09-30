@@ -31,12 +31,6 @@ public class MainActivity extends AppCompatActivity implements CustomDialog.OnIn
 
         mainScreenTaskNameList = findViewById(R.id.task_name_list);
 
-//        LinearLayoutManager manager = new LinearLayoutManager(this);
-//        mainScreenTaskNameList.setLayoutManager(manager);
-//
-//        TaskAdapter adapter = new TaskAdapter(taskNames);
-//        mainScreenTaskNameList.setAdapter(adapter);
-
         FloatingActionButton fab = findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
